@@ -1,1 +1,19 @@
-<p>coins works!</p>
+<div class="container">
+    <h4 class="mt-3">Rechercher un Coin</h4>
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="search">
+  
+    <div class="d-flex flex-wrap mt-3">
+        <div *ngFor="let item of coins | filter:search" class="card m-3" style="width: 18rem;">
+            <h4 class="card-header" style="background-color:rgb(215, 211, 211);">{{item.name | uppercase}}</h4>
+            <div class="card-body">
+              <h5 class="card-subtitle">{{item.symbol}}</h5>
+              <p class="card-text mb-2 text-primary">Classement : {{item.rank}}</p>
+              <p class="card-text">Prix actuel : {{item.priceUsd | number: '1.0-0'}}</p>
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="selectedCoin(item)">Voir</button>
+              <br>
+              <a href="{{item.explorer}}" class="card-link">Site</a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-coins-modal [coinChild]="coinParent"></app-coins-modal>

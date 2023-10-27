@@ -12,9 +12,8 @@ export class CoinsService {
 
   url = "https://api.coincap.io/v2/assets";
 
-  fetchAll(): Observable<IcoinsData> {
-    return this.http.get<any>(this.url).pipe(
-      map((data) => data as IcoinsData)
-    );
+  fetchAll(): Observable<IcoinsData> 
+  {
+    return this.http.get<any>(this.url).pipe(map((data) => data as IcoinsData));
   }
 }

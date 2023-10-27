@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CoinsComponent } from './coins/coins.component';
 import { CoinsModalComponent } from './coins-modal/coins-modal.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CoinsComponent,
-    CoinsModalComponent
+    CoinsModalComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
